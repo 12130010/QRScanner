@@ -8,6 +8,7 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -18,7 +19,7 @@
         <activity
             android:name=".ScannerActivity"
             android:label="@string/title_activity_scanner"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CheckNetWorkActivity"
             android:label="@string/title_activity_check_net_work">
@@ -28,7 +29,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".NotifyActivity"
+            android:label="@string/title_activity_notify"></activity>
     </application>
 
 </manifest>

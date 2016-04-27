@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -45,11 +46,12 @@ public class ScannerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         ref = getSharedPreferences(MY_DATA, MODE_PRIVATE);
 
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -111,8 +113,16 @@ public class ScannerActivity extends AppCompatActivity {
         btnURL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isScanned)
-                    Toast.makeText(ScannerActivity.this, "Click", Toast.LENGTH_SHORT).show();
+                if (isScanned) {
+                    if(ref.getString(ACCOUNT_NAME, null) == null) {
+                        Toast.makeText(ScannerActivity.this, "Please Choose Account...", Toast.LENGTH_SHORT).show();
+                    }else {
+//                        Toast.makeText(ScannerActivity.this, "Click", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(ScannerActivity.this, NotifyActivity.class);
+                        intent.putExtra(NotifyActivity.URL, btnURL.getText().toString());
+                        startActivity(intent);
+                    }
+                }
             }
         });
         btnAcc.setOnClickListener(new View.OnClickListener() {
