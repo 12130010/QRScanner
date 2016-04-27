@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.nhuocquy.qrscaner.MainActivity"
+    tools:context=".ScannerActivity"
     tools:showIn="@layout/activity_main">
 
     <SurfaceView
@@ -18,11 +18,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_above="@+id/code_info"
+        android:layout_above="@+id/btnURL"
         android:layout_alignParentTop="true" />
 
     <Button
-        android:id="@+id/code_info"
+        android:id="@+id/btnURL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nothing to read."
@@ -31,6 +31,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Account...."
+        android:textAllCaps="false"
+        android:id="@+id/btnAcc"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

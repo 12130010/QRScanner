@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">QRScaner</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_scanner">QR Scanner</string>
+    <string name="title_activity_check_net_work">Network - GPS state</string>
 </resources>
